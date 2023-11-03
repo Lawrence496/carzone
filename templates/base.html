@@ -3,7 +3,30 @@
 <html>
 
 <head>
-    <title></title>
+    {% if '/' == request.path %}
+    <title>Home - Carzone</title>
+    {% endif %}
+    {% if '/cars/' == request.path %}
+    <title>Cars - Carzone</title>
+    {% endif %}
+    {% if '/about' == request.path %}
+    <title>About - Carzone</title>
+    {% endif %}
+    {% if '/services' == request.path %}
+    <title>Services - Carzone</title>
+    {% endif %}
+    {% if '/contact' == request.path %}
+    <title>Contact - Carzone</title>
+    {% endif %}
+    {% if '/accounts/dashboard' == request.path %}
+    <title>Dashboard - Carzone</title>
+    {% endif %}
+    {% if '/accounts/login' == request.path %}
+    <title>Login - Carzone</title>
+    {% endif %}
+    {% if '/accounts/register' == request.path %}
+    <title>Register - Carzone</title>
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
 
@@ -42,12 +65,21 @@
 </head>
 <body>
     {% include 'includes/topnav.html' %}
+    
     {% include 'includes/navbar.html' %}
     
     {% block content %}
+    <!-- Full Page Search -->
 
 
     {% endblock content %}
+    <div id="full-page-search">
+        <button type="button" class="close">×</button>
+        <form action="{% url 'search' %}" class="search-header">
+            <input type="search" value="" placeholder="type keyword(s) here" name="keyword" />
+            <button type="submit" class="btn btn-sm button-theme">Search</button>
+        </form>
+    </div>
 
     {% include 'includes/footer.html' %}
 
