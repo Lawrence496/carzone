@@ -25,7 +25,7 @@ SECRET_KEY = '#9!28buwkeyh6xu9gklkjz)9iwrgz8ngf!qq6by^u9wv-3t87v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://carzone-app.onrender.com/']
+ALLOWED_HOSTS = ['carzone-webapp.azurewebsites.net']
 
 
 # Application definition
